@@ -26,16 +26,16 @@ export function getCompiledRoutes() {
   });
 }
 
-const transformSchedule = async (plan: TransformerInput): Promise<TransformerOutput> => {
-  const allocationIds = plan.featureModel.allocations.map((allocation) => allocation.id);
+const transformSchedule = async (transformerInput: TransformerInput): Promise<TransformerOutput> => {
+  const allocationIds = transformerInput.featureModel.allocations.map((allocation) => allocation.id);
   // Create a single resource dependency for all allocations. This means that every allocation will be given to one resource.
   const resourceDependencies = [{
     allocationIds: allocationIds,
   }]
   return {
-    productData: plan.productData,
+    productData: transformerInput.productData,
     featureModel: {
-      ...plan.featureModel,
+      ...transformerInput.featureModel,
       resourceDependencies,
     },
   };
