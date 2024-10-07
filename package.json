@@ -30,6 +30,6 @@
     "@types/path-to-regexp": "^1.7.0",
     "axios": "^0.21.0",
     "lodash": "^4.17.21",
-    "path-to-regexp": "^3.0.0"
+    "path-to-regexp": "^3.3.0"
   }
 }
